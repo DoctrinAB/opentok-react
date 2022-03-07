@@ -8,7 +8,7 @@
     "test": "karma start",
     "unit": "karma start --single-run",
     "prepublish": "npm run build",
-    "build": "babel src --out-dir dist",
+    "build": "NODE_ENV=production babel src --out-dir dist",
     "lint": "eslint src test",
     "example": "cd example && browserify -o bundle.js app.js && python -m SimpleHTTPServer"
   },
@@ -42,13 +42,16 @@
     "uuid": "^8.3.0"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/plugin-transform-react-constant-elements": "^7.17.6",
+    "@babel/plugin-transform-react-inline-elements": "^7.16.7",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
     "@types/react": "^16.9.34",
-    "babel-cli": "^6.18.0",
     "babel-eslint": "^7.1.1",
-    "babel-preset-es2015": "^6.9.0",
-    "babel-preset-react": "^6.5.0",
-    "babel-preset-stage-2": "^6.18.0",
-    "babelify": "^7.3.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babelify": "^10.0.0",
     "browserify": "^17.0.0",
     "enzyme": "^2.6.0",
     "eslint": "^3.17.1",
@@ -59,9 +62,9 @@
     "eslint-plugin-react": "^6.10.0",
     "jasmine-core": "^2.5.2",
     "karma": "^6.3.16",
-    "karma-babel-preprocessor": "^6.0.1",
+    "karma-babel-preprocessor": "^8.0.2",
     "karma-browserify": "^8.1.0",
-    "karma-chrome-launcher": "^2.0.0",
+    "karma-chrome-launcher": "^3.1.0",
     "karma-jasmine": "^1.1.0",
     "karma-spec-reporter": "^0.0.26",
     "opentok-test-scripts": "^3.2.1",
@@ -76,5 +79,11 @@
       "babelify"
     ]
   },
-  "types": "./types/index.d.ts"
+  "types": "./types/index.d.ts",
+  "browserslist": [
+    "last 2 major versions",
+    "last 4 iOS major versions",
+    "> 5%",
+    "not dead"
+  ]
 }
