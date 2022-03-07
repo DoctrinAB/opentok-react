@@ -1,1 +1,12 @@
-{ "presets": ["es2015", "stage-2", "react"] }
+{
+	"presets": [["@babel/preset-env"], ["@babel/preset-react"]],
+	"env": {
+		"production": {
+			"plugins": [
+				"babel-plugin-transform-react-remove-prop-types",
+				"@babel/plugin-transform-react-constant-elements",
+				"@babel/plugin-transform-react-inline-elements"
+			]
+		}
+	}
+}
