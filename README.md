@@ -1,6 +1,4 @@
-# opentok-react
-
-[![npm version](https://badge.fury.io/js/opentok-react.svg)](https://badge.fury.io/js/opentok-react) [![Build Status](https://travis-ci.org/opentok/opentok-react.svg?branch=main)](https://travis-ci.org/opentok/opentok-react)
+# @doctrinab/opentok-react
 
 React components for OpenTok.js. Unofficial fork of [opentok/opentok-react](https://github.com/opentok/opentok-react).
 
