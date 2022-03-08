@@ -19,7 +19,6 @@ describe("preloadScript", () => {
 		));
 		const loadingDelegate = <div className="loading-delegate" />;
 		const wrapper = mount(<OTModule loadingDelegate={loadingDelegate} />);
-		console.log("WRAP", wrapper.debug());
 
 		const divContainer = wrapper.find("div.loading-delegate");
 		expect(divContainer.length).toBe(1);
