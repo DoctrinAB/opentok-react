@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount, render } from './enzyme';
 import OTSession from '../src/OTSession';
 
 const MyComponent = () => <div />;
@@ -26,22 +26,26 @@ describe('OTSession', () => {
     spyOn(OT, 'initSession').and.returnValue(session);
   });
 
+	afterEach(() => {
+		OT.initSession.calls.reset();
+	})
+
   describe('missing credentials', () => {
     it('should throw when missing apiKey', () => {
       expect(() => {
-        mount(<OTSession />);
+        render(<OTSession />);
       }).toThrowError(/Missing apiKey/);
     });
 
     it('should throw when missing sessionId', () => {
       expect(() => {
-        mount(<OTSession apiKey={apiKey} />);
+        render(<OTSession apiKey={apiKey} />);
       }).toThrowError(/Missing sessionId/);
     });
 
     it('should throw when missing token', () => {
       expect(() => {
-        mount(<OTSession apiKey={apiKey} sessionId={sessionId} />);
+        render(<OTSession apiKey={apiKey} sessionId={sessionId} />);
       }).toThrowError(/Missing token/);
     });
   });
@@ -104,13 +108,13 @@ describe('OTSession', () => {
       });
 
       it('should have no children', () => {
-        expect(wrapper.children().length).toBe(0);
+        expect(wrapper.find('div').children().length).toBe(0);
       });
     });
 
     describe('with children', () => {
       beforeEach(() => {
-        wrapper = mount((
+        wrapper = render((
           <OTSession apiKey={apiKey} sessionId={sessionId} token={token}>
             <MyComponent />
             <MyComponent />

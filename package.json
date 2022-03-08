@@ -32,11 +32,11 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "react": "^15.5.0 || ^16.0.0"
+    "react": "^16.0.0"
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "prop-types": "^15.5.10",
+    "prop-types": "^15.8.1",
     "react-display-name": "^0.2.0",
     "scriptjs": "^2.5.8",
     "uuid": "^8.3.0"
@@ -46,6 +46,7 @@
     "@babel/core": "^7.17.5",
     "@babel/plugin-transform-react-constant-elements": "^7.17.6",
     "@babel/plugin-transform-react-inline-elements": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
     "@types/react": "^16.9.34",
@@ -53,14 +54,16 @@
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "babelify": "^10.0.0",
     "browserify": "^17.0.0",
-    "enzyme": "^2.6.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.6",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jasmine": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^6.10.0",
-    "jasmine-core": "^2.5.2",
+    "jasmine-core": "^4.0.1",
+    "jasmine-enzyme": "^7.1.2",
     "karma": "^6.3.16",
     "karma-babel-preprocessor": "^8.0.2",
     "karma-browserify": "^8.1.0",
@@ -68,10 +71,8 @@
     "karma-jasmine": "^1.1.0",
     "karma-spec-reporter": "^0.0.26",
     "opentok-test-scripts": "^3.2.1",
-    "react": "^15.5.0",
-    "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^15.5.0",
-    "react-test-renderer": "^15.5.4",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "tsd": "^0.11.0"
   },
   "browserify": {
