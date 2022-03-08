@@ -2,7 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/opentok-react.svg)](https://badge.fury.io/js/opentok-react) [![Build Status](https://travis-ci.org/opentok/opentok-react.svg?branch=main)](https://travis-ci.org/opentok/opentok-react)
 
-React components for OpenTok.js
+React components for OpenTok.js. Unofficial fork of [opentok/opentok-react](https://github.com/opentok/opentok-react).
 
 ## Contents
 
@@ -487,10 +487,6 @@ export default preloadScript(App);
 1. `npm run build`
 1. Check that files in `dist/` have been updated.
 
-## Contributing
-
-If you make changes to the project that you would like to contribute back then please follow the [contributing guidelines](CONTRIBUTING.md). All contributions are greatly appreciated!
-
 ## Tests
 
 Run the unit tests locally with the following command:
@@ -499,10 +495,10 @@ Run the unit tests locally with the following command:
 npm run unit
 ```
 
-By default this will launch the Chrome browser. To run tests in Firefox use:
+By default this will launch the Chrome browser in headless mode. To run tests in Chrome use:
 
 ```
-npm run unit -- --browsers Firefox
+npm run unit -- --browsers Chrome
 ```
 
 Run the linter with:
@@ -516,4 +512,5 @@ The unit tests are automatically run on [Travis](https://travis-ci.org/opentok/o
 ## About
 
 Originally authored by [Aiham Hammami](https://github.com/aiham).
-Currently maintained by OpenTok Engineers and community members. Please note that this is not officially supported by [TokBox](https://tokbox.com/).
+Please note that this is not officially supported by [TokBox](https://tokbox.com/).
+
