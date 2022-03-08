@@ -72,7 +72,7 @@
     "react-addons-test-utils": "^15.5.1",
     "react-dom": "^15.5.0",
     "react-test-renderer": "^15.5.4",
-    "tsd": "^0.11.0"
+    "tsd": "^0.19.1"
   },
   "browserify": {
     "transform": [
