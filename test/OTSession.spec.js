@@ -26,9 +26,9 @@ describe('OTSession', () => {
     spyOn(OT, 'initSession').and.returnValue(session);
   });
 
-	afterEach(() => {
-		OT.initSession.calls.reset();
-	})
+  afterEach(() => {
+    OT.initSession.calls.reset();
+  });
 
   describe('missing credentials', () => {
     it('should throw when missing apiKey', () => {
