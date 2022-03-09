@@ -4,7 +4,7 @@
   "description": "React components for OpenTok.js",
   "main": "dist/index.js",
   "scripts": {
-    "types": "tsd types",
+    "types": "tsd",
     "test": "karma start",
     "unit": "karma start --single-run",
     "prepublish": "npm run build",
