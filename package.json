@@ -45,6 +45,7 @@
     "@babel/cli": "^7.17.6",
     "@babel/core": "^7.17.5",
     "@babel/eslint-parser": "^7.17.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
     "@babel/plugin-transform-react-constant-elements": "^7.17.6",
     "@babel/plugin-transform-react-inline-elements": "^7.16.7",
     "@babel/plugin-transform-runtime": "^7.17.0",
@@ -85,6 +86,7 @@
     "last 2 major versions",
     "last 4 iOS major versions",
     "> 5%",
-    "not dead"
+    "not dead",
+    "not IE 11"
   ]
 }
