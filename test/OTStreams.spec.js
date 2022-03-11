@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { render, mount } from './enzyme';
 import OTStreams from '../src/OTStreams';
 
 const MyComponent = () => <div />;
@@ -7,15 +7,21 @@ const MyComponent = () => <div />;
 describe('OTStreams', () => {
   beforeEach(() => {
     spyOn(console, 'error').and.callThrough();
+    spyOn(window, 'onerror');
+  });
+
+  afterEach(() => {
+    console.error.calls.reset();
+    window.onerror.calls.reset();
   });
 
   describe('no children', () => {
     it('should log error if no session provided', () => {
-      expect(() => {
-        mount(<OTStreams />);
+      expect(async () => {
+        await render(<OTStreams />);
         expect(console.error).toHaveBeenCalledWith(
-          jasmine.stringMatching('Failed prop type'),
-        );
+					jasmine.stringMatching('Failed prop type'),
+				);
       }).not.toThrow();
     });
 
@@ -23,28 +29,38 @@ describe('OTStreams', () => {
       expect(() => {
         mount(<OTStreams session={{}} />);
         expect(console.error).toHaveBeenCalledWith(
-          jasmine.stringMatching('Failed prop type'),
-        );
+					jasmine.stringMatching('Failed prop type'),
+				);
       }).toThrow();
     });
   });
 
   describe('multiple children', () => {
     it('should log error if no session provided', () => {
-      expect(() => {
-        mount(<OTStreams><MyComponent /><MyComponent /></OTStreams>);
+      expect(async () => {
+        await render(
+          <OTStreams>
+            <MyComponent />
+            <MyComponent />
+          </OTStreams>,
+				);
         expect(console.error).toHaveBeenCalledWith(
-          jasmine.stringMatching('Failed prop type'),
-        );
+					jasmine.stringMatching('Failed prop type'),
+				);
       }).not.toThrow();
     });
 
     it('should log error and throw if session provided', () => {
       expect(() => {
-        mount(<OTStreams session={{}}><MyComponent /><MyComponent /></OTStreams>);
+        mount(
+          <OTStreams session={{}}>
+            <MyComponent />
+            <MyComponent />
+          </OTStreams>,
+				);
         expect(console.error).toHaveBeenCalledWith(
-          jasmine.stringMatching('Failed prop type'),
-        );
+					jasmine.stringMatching('Failed prop type'),
+				);
       }).toThrow();
     });
   });
@@ -52,28 +68,32 @@ describe('OTStreams', () => {
   describe('one child', () => {
     it('should not warn or throw if no session provided', () => {
       expect(() => {
-        mount(<OTStreams><MyComponent /></OTStreams>);
+        mount(
+          <OTStreams>
+            <MyComponent />
+          </OTStreams>,
+				);
         expect(console.error).not.toHaveBeenCalled();
       }).not.toThrow();
     });
 
     it('should not warn or throw if session provided', () => {
       expect(() => {
-        mount((
+        mount(
           <OTStreams session={{}}>
             <MyComponent />
-          </OTStreams>
-        ));
+          </OTStreams>,
+				);
         expect(console.error).not.toHaveBeenCalled();
       }).not.toThrow();
     });
 
     it('should not clone child if streams props is empty', () => {
-      const wrapper = mount((
+      const wrapper = mount(
         <OTStreams session={{}}>
           <MyComponent />
-        </OTStreams>
-      ));
+        </OTStreams>,
+			);
       expect(wrapper.find('MyComponent').length).toBe(0);
     });
 
@@ -85,11 +105,11 @@ describe('OTStreams', () => {
       beforeEach(() => {
         session = {};
         streams = [{ id: 'fakeStreamId' }];
-        wrapper = mount((
+        wrapper = mount(
           <OTStreams session={session} streams={streams}>
             <MyComponent />
-          </OTStreams>
-        ));
+          </OTStreams>,
+				);
       });
 
       it('should clone child', () => {
@@ -106,11 +126,11 @@ describe('OTStreams', () => {
       beforeEach(() => {
         session = {};
         streams = [{ id: 'fakeStreamId1' }, { id: 'fakeStreamId2' }];
-        wrapper = mount((
+        wrapper = mount(
           <OTStreams session={session} streams={streams}>
             <MyComponent />
-          </OTStreams>
-        ));
+          </OTStreams>,
+				);
       });
 
       it('should clone child per stream', () => {

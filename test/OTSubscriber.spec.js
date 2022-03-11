@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount } from 'enzyme';
+import { mount } from './enzyme';
 import { validate as uuidValidate, version as uuidVersion } from 'uuid';
 import OTSubscriber from '../src/OTSubscriber';
 
@@ -30,7 +30,7 @@ describe('OTSubscriber', () => {
     });
 
     it('should render class on wrapper element', () => {
-      const divWrapper = wrapper.render().find('div.myclass');
+      const divWrapper = wrapper.find('div.myclass');
       expect(divWrapper.length).toBe(1);
     });
   });
