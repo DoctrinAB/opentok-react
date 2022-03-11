@@ -1,8 +1,10 @@
 example/
 src/
 test/
+.github/
 types/index.test-d.ts
 types/tsconfig.json
 karma.conf.js
-.travis.yml
 .npmignore
+.babelrc
+.nvmrc
