@@ -69,8 +69,8 @@ export default class OTPublisher extends Component {
       this.state.publisher.off('streamCreated', this.streamCreatedHandler);
 
       if (
-        this.props.eventHandlers &&
-        typeof this.props.eventHandlers === 'object'
+        this.props.eventHandlers
+        && typeof this.props.eventHandlers === 'object'
       ) {
         this.state.publisher.once('destroyed', () => {
           this.state.publisher.off(this.props.eventHandlers);
@@ -145,8 +145,8 @@ export default class OTPublisher extends Component {
     publisher.on('streamCreated', this.streamCreatedHandler);
 
     if (
-      this.props.eventHandlers &&
-      typeof this.props.eventHandlers === 'object'
+      this.props.eventHandlers
+      && typeof this.props.eventHandlers === 'object'
     ) {
       const handles = omitBy(isNil)(this.props.eventHandlers);
       publisher.on(handles);
@@ -163,11 +163,11 @@ export default class OTPublisher extends Component {
 
   sessionConnectedHandler = () => {
     this.publishToSession(this.state.publisher);
-  }
+  };
 
   streamCreatedHandler = (event) => {
     this.setState({ lastStreamId: event.stream.id });
-  }
+  };
 
   render() {
     const { className, style } = this.props;

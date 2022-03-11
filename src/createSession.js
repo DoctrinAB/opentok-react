@@ -22,7 +22,7 @@ export default function createSession({
   let streams = [];
 
   let onStreamCreated = (event) => {
-    const index = streams.findIndex(stream => stream.id === event.stream.id);
+    const index = streams.findIndex((stream) => stream.id === event.stream.id);
     if (index < 0) {
       streams.push(event.stream);
       onStreamsUpdated(streams);
@@ -30,7 +30,7 @@ export default function createSession({
   };
 
   let onStreamDestroyed = (event) => {
-    const index = streams.findIndex(stream => stream.id === event.stream.id);
+    const index = streams.findIndex((stream) => stream.id === event.stream.id);
     if (index >= 0) {
       streams.splice(index, 1);
       onStreamsUpdated(streams);

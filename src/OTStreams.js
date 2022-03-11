@@ -13,10 +13,12 @@ export default function OTStreams(props, context) {
   const child = Children.only(props.children);
 
   const childrenWithContextWrapper = Array.isArray(streams)
-    ? streams.map(stream => (child
-      ? <OTSubscriberContext stream={stream} key={stream.id} >
-        { cloneElement(child) }
-      </OTSubscriberContext>
+    ? streams.map((stream) => (child
+      ? (
+        <OTSubscriberContext stream={stream} key={stream.id}>
+          { cloneElement(child) }
+        </OTSubscriberContext>
+      )
       : child))
     : null;
 

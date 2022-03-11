@@ -42,7 +42,7 @@ export default function preloadScript(InnerComponent) {
       if (this.isPresent) {
         this.setState({ scriptLoaded: true });
       }
-    }
+    };
 
     render() {
       const { opentokClientUrl, loadingDelegate, ...restProps } = this.props;

@@ -2,7 +2,9 @@ import React from 'react';
 import { mount, render } from './enzyme';
 import OTSession from '../src/OTSession';
 
-const MyComponent = () => <div />;
+function MyComponent() {
+  return <div />;
+}
 
 describe('OTSession', () => {
   let session;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { mount } from './enzyme';
 import { validate as uuidValidate, version as uuidVersion } from 'uuid';
+import { mount } from './enzyme';
 import OTPublisher from '../src/OTPublisher';
 
 describe('OTPublisher', () => {

@@ -65,35 +65,35 @@ export default class OTSubscriber extends Component {
     const { subscriberId } = this;
 
     const subscriber = this.state.session.subscribe(
-            this.state.stream,
-            container,
-            this.props.properties,
-            (err) => {
-              if (subscriberId !== this.subscriberId) {
-                    // Either this subscriber has been recreated or the
-                    // component unmounted so don't invoke any callbacks
-                return;
-              }
-              if (err &&
-                this.props.retry &&
-                this.state.currentRetryAttempt < (this.maxRetryAttempts - 1)) {
-                // Error during subscribe function
-                this.handleRetrySubscriber();
-                // If there is a retry action, do we want to execute the onError props function?
-                // return;
-              }
-              if (err && typeof this.props.onError === 'function') {
-                this.props.onError(err);
-              } else if (!err && typeof this.props.onSubscribe === 'function') {
-                this.props.onSubscribe();
-              }
-            },
-        );
+      this.state.stream,
+      container,
+      this.props.properties,
+      (err) => {
+        if (subscriberId !== this.subscriberId) {
+          // Either this subscriber has been recreated or the
+          // component unmounted so don't invoke any callbacks
+          return;
+        }
+        if (err
+                && this.props.retry
+                && this.state.currentRetryAttempt < (this.maxRetryAttempts - 1)) {
+          // Error during subscribe function
+          this.handleRetrySubscriber();
+          // If there is a retry action, do we want to execute the onError props function?
+          // return;
+        }
+        if (err && typeof this.props.onError === 'function') {
+          this.props.onError(err);
+        } else if (!err && typeof this.props.onSubscribe === 'function') {
+          this.props.onSubscribe();
+        }
+      },
+    );
 
     if (
-            this.props.eventHandlers &&
-            typeof this.props.eventHandlers === 'object'
-        ) {
+      this.props.eventHandlers
+            && typeof this.props.eventHandlers === 'object'
+    ) {
       subscriber.on(this.props.eventHandlers);
     }
 
@@ -102,7 +102,7 @@ export default class OTSubscriber extends Component {
 
   handleRetrySubscriber() {
     setTimeout(() => {
-      this.setState(state => ({
+      this.setState((state) => ({
         currentRetryAttempt: state.currentRetryAttempt + 1,
         subscriber: null,
       }));
@@ -115,9 +115,9 @@ export default class OTSubscriber extends Component {
 
     if (this.state.subscriber) {
       if (
-                this.props.eventHandlers &&
-                typeof this.props.eventHandlers === 'object'
-            ) {
+        this.props.eventHandlers
+                && typeof this.props.eventHandlers === 'object'
+      ) {
         this.state.subscriber.once('destroyed', () => {
           this.state.subscriber.off(this.props.eventHandlers);
         });

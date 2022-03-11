@@ -15,7 +15,6 @@ export default class OTSubscriberContext extends Component {
   render() {
     return <div>{ this.props.children }</div>;
   }
-
 }
 
 OTSubscriberContext.propTypes = {

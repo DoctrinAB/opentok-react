@@ -22,9 +22,9 @@ export default class OTSession extends Component {
 
   componentDidUpdate(prevProps) {
     if (
-      prevProps.apiKey !== this.props.apiKey ||
-      prevProps.sessionId !== this.props.sessionId ||
-      prevProps.token !== this.props.token
+      prevProps.apiKey !== this.props.apiKey
+      || prevProps.sessionId !== this.props.sessionId
+      || prevProps.token !== this.props.token
     ) {
       this.createSession();
     }
@@ -48,8 +48,8 @@ export default class OTSession extends Component {
     });
 
     if (
-      this.props.eventHandlers &&
-      typeof this.props.eventHandlers === 'object'
+      this.props.eventHandlers
+      && typeof this.props.eventHandlers === 'object'
     ) {
       this.sessionHelper.session.on(this.props.eventHandlers);
     }
@@ -61,8 +61,8 @@ export default class OTSession extends Component {
   destroySession() {
     if (this.sessionHelper) {
       if (
-        this.props.eventHandlers &&
-        typeof this.props.eventHandlers === 'object'
+        this.props.eventHandlers
+        && typeof this.props.eventHandlers === 'object'
       ) {
         this.sessionHelper.session.off(this.props.eventHandlers);
       }

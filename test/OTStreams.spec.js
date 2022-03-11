@@ -2,7 +2,9 @@ import React from 'react';
 import { render, mount } from './enzyme';
 import OTStreams from '../src/OTStreams';
 
-const MyComponent = () => <div />;
+function MyComponent() {
+  return <div />;
+}
 
 describe('OTStreams', () => {
   beforeEach(() => {
@@ -20,8 +22,8 @@ describe('OTStreams', () => {
       expect(async () => {
         await render(<OTStreams />);
         expect(console.error).toHaveBeenCalledWith(
-					jasmine.stringMatching('Failed prop type'),
-				);
+          jasmine.stringMatching('Failed prop type'),
+        );
       }).not.toThrow();
     });
 
@@ -29,8 +31,8 @@ describe('OTStreams', () => {
       expect(() => {
         mount(<OTStreams session={{}} />);
         expect(console.error).toHaveBeenCalledWith(
-					jasmine.stringMatching('Failed prop type'),
-				);
+          jasmine.stringMatching('Failed prop type'),
+        );
       }).toThrow();
     });
   });
@@ -43,10 +45,10 @@ describe('OTStreams', () => {
             <MyComponent />
             <MyComponent />
           </OTStreams>,
-				);
+        );
         expect(console.error).toHaveBeenCalledWith(
-					jasmine.stringMatching('Failed prop type'),
-				);
+          jasmine.stringMatching('Failed prop type'),
+        );
       }).not.toThrow();
     });
 
@@ -57,10 +59,10 @@ describe('OTStreams', () => {
             <MyComponent />
             <MyComponent />
           </OTStreams>,
-				);
+        );
         expect(console.error).toHaveBeenCalledWith(
-					jasmine.stringMatching('Failed prop type'),
-				);
+          jasmine.stringMatching('Failed prop type'),
+        );
       }).toThrow();
     });
   });
@@ -72,7 +74,7 @@ describe('OTStreams', () => {
           <OTStreams>
             <MyComponent />
           </OTStreams>,
-				);
+        );
         expect(console.error).not.toHaveBeenCalled();
       }).not.toThrow();
     });
@@ -83,7 +85,7 @@ describe('OTStreams', () => {
           <OTStreams session={{}}>
             <MyComponent />
           </OTStreams>,
-				);
+        );
         expect(console.error).not.toHaveBeenCalled();
       }).not.toThrow();
     });
@@ -93,7 +95,7 @@ describe('OTStreams', () => {
         <OTStreams session={{}}>
           <MyComponent />
         </OTStreams>,
-			);
+      );
       expect(wrapper.find('MyComponent').length).toBe(0);
     });
 
@@ -109,7 +111,7 @@ describe('OTStreams', () => {
           <OTStreams session={session} streams={streams}>
             <MyComponent />
           </OTStreams>,
-				);
+        );
       });
 
       it('should clone child', () => {
@@ -130,7 +132,7 @@ describe('OTStreams', () => {
           <OTStreams session={session} streams={streams}>
             <MyComponent />
           </OTStreams>,
-				);
+        );
       });
 
       it('should clone child per stream', () => {

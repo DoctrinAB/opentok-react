@@ -16,7 +16,7 @@ describe('preloadScript', () => {
 
     const OTModule = preloadScript(() => (
       <div className="opentok-module" />
-		));
+    ));
     const loadingDelegate = <div className="loading-delegate" />;
     const wrapper = mount(<OTModule loadingDelegate={loadingDelegate} />);
 
@@ -29,7 +29,7 @@ describe('preloadScript', () => {
 
     const OTModule = preloadScript(() => (
       <div className="opentok-module" />
-		));
+    ));
     const loadingDelegate = <div className="loading-delegate" />;
     const wrapper = mount(<OTModule loadingDelegate={loadingDelegate} />);
 
