@@ -1,3 +1,5 @@
+[![CI](https://github.com/DoctrinAB/opentok-react/actions/workflows/ci.yml/badge.svg)](https://github.com/DoctrinAB/opentok-react/actions/workflows/ci.yml)
+
 # @doctrinab/opentok-react
 
 React components for OpenTok.js. Unofficial fork of [opentok/opentok-react](https://github.com/opentok/opentok-react).
@@ -505,7 +507,7 @@ Run the linter with:
 npm run lint
 ```
 
-The unit tests are automatically run on [Travis](https://travis-ci.org/opentok/opentok-react) on both Chrome and Firefox and the current build status is shown at the top of this document.
+The unit tests are automatically run on [Github Actions](https://github.com/DoctrinAB/opentok-react/actions/workflows/ci.yml) in Chrome Headless and the current build status is shown at the top of this document.
 
 ## About
 
