@@ -22,14 +22,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/opentok/opentok-react.git"
+    "url": "https://github.com/doctrinab/opentok-react.git"
   },
-  "contributors": [
-    {
-      "name": "Aiham Hammami",
-      "email": "aiham@aiham.net"
-    }
-  ],
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.0.0"
