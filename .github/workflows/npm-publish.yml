@@ -20,7 +20,7 @@ jobs:
           scope: '@doctrinab'
 
       - run: npm ci
-      - run: npm test
+      - run: npm run unit
 
   publish-gpr:
     needs: test
