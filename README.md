@@ -31,7 +31,7 @@ React components for OpenTok.js. Unofficial fork of [opentok/opentok-react](http
 
 ## Install
 
-Add `opentok-react` as a dependency of your application:
+Add `@doctrinab/opentok-react` as a dependency of your application:
 
 ```sh
 npm install --save @doctrinab/opentok-react@1.0.0
