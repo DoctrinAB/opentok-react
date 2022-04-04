@@ -68,7 +68,7 @@
     "opentok-test-scripts": "^3.2.1",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "tsd": "^0.19.1"
+    "tsd": "^0.20.0"
   },
   "browserify": {
     "transform": [
