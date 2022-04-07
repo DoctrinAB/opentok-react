@@ -1,8 +1,5 @@
 name: CI
 
-permissions:
-  packages: read
-
 on:
   push:
     branches: [master]
@@ -22,7 +19,5 @@ jobs:
           cache: 'npm'
           node-version-file: '.nvmrc'
       - run: npm ci
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: npm run build --if-present
       - run: npm run unit
