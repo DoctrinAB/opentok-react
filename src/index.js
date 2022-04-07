@@ -6,19 +6,12 @@ import createSession from './createSession';
 import preloadScript from './preloadScript';
 
 export default {
-  OTSession,
-  OTPublisher,
-  OTStreams,
-  OTSubscriber,
-  createSession,
-  preloadScript,
+	OTSession,
+	OTPublisher,
+	OTStreams,
+	OTSubscriber,
+	createSession,
+	preloadScript,
 };
 
-export {
-  OTSession,
-  OTPublisher,
-  OTStreams,
-  OTSubscriber,
-  createSession,
-  preloadScript,
-};
+export { OTSession, OTPublisher, OTStreams, OTSubscriber, createSession, preloadScript };
