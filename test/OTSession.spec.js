@@ -122,6 +122,4 @@ describe('OTSession', () => {
 			});
 		});
 	});
-
-	describe('with event handlers', () => {});
 });
