@@ -1,25 +1,25 @@
 module.exports = (config) => {
-	const browser = process.env.BROWSER || "ChromeHeadless";
+	const browser = process.env.BROWSER || 'ChromeHeadless';
 
 	config.set({
-		frameworks: ["browserify", "jasmine"],
-		files: ["https://static.opentok.com/v2/js/opentok.js", "test/**/*.js"],
+		frameworks: ['browserify', 'jasmine'],
+		files: ['https://static.opentok.com/v2/js/opentok.js', 'test/**/*.js'],
 		preprocessors: {
-			"src/**/*.js": ["babel", "browserify"],
-			"test/**/*.js": ["babel", "browserify"],
+			'src/**/*.js': ['babel', 'browserify'],
+			'test/**/*.js': ['babel', 'browserify'],
 		},
 		browserify: {
 			debug: true,
-			transform: ["babelify"],
+			transform: ['babelify'],
 			configure: (bundle) => {
-				bundle.on("prebundle", () => {
-					bundle.external("react/addons");
-					bundle.external("react/lib/ReactContext");
-					bundle.external("react/lib/ExecutionEnvironment");
+				bundle.on('prebundle', () => {
+					bundle.external('react/addons');
+					bundle.external('react/lib/ReactContext');
+					bundle.external('react/lib/ExecutionEnvironment');
 				});
 			},
 		},
-		reporters: ["spec"],
+		reporters: ['spec'],
 		port: 9876,
 		colors: true,
 		logLevel: config.LOG_DEBUG,
