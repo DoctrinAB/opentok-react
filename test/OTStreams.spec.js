@@ -19,31 +19,31 @@ describe('OTStreams', () => {
 
 	describe('no children', () => {
 		it('should log error if no session provided', () => {
-			expect(async () => {
-				await render(<OTStreams />);
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
+			expect(() => {
+				mount(<OTStreams />);
 			}).not.toThrow();
+			expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 		});
 
 		it('should log error and throw if session provided', () => {
 			expect(() => {
 				mount(<OTStreams session={{}} />);
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
 			}).toThrow();
+			expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 		});
 	});
 
 	describe('multiple children', () => {
 		it('should log error if no session provided', () => {
-			expect(async () => {
-				await render(
+			expect(() => {
+				mount(
 					<OTStreams>
 						<MyComponent />
 						<MyComponent />
 					</OTStreams>,
 				);
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
 			}).not.toThrow();
+			expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 		});
 
 		it('should log error and throw if session provided', () => {
@@ -54,8 +54,8 @@ describe('OTStreams', () => {
 						<MyComponent />
 					</OTStreams>,
 				);
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
 			}).toThrow();
+			expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 		});
 	});
 
