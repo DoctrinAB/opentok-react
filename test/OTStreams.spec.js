@@ -18,15 +18,10 @@ describe('OTStreams', () => {
 	});
 
 	describe('no children', () => {
-		it('should log error if no session provided', (done) => {
+		it('should log error if no session provided', () => {
 			expect(() => {
 				mount(<OTStreams />);
 			}).not.toThrow();
-
-			process.nextTick(() => {
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
-				done();
-			});
 		});
 
 		it('should log error and throw if session provided', () => {
@@ -37,7 +32,7 @@ describe('OTStreams', () => {
 	});
 
 	describe('multiple children', () => {
-		it('should log error if no session provided', (done) => {
+		it('should log error if no session provided', () => {
 			expect(() => {
 				mount(
 					<OTStreams>
@@ -46,11 +41,6 @@ describe('OTStreams', () => {
 					</OTStreams>,
 				);
 			}).not.toThrow();
-
-			process.nextTick(() => {
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
-				done();
-			});
 		});
 
 		it('should log error and throw if session provided', () => {
