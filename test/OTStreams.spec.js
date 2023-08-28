@@ -21,15 +21,15 @@ describe('OTStreams', () => {
 		it('should log error if no session provided', () => {
 			expect(() => {
 				mount(<OTStreams />);
+				expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 			}).not.toThrow();
-			expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 		});
 
 		it('should log error and throw if session provided', () => {
 			expect(() => {
 				mount(<OTStreams session={{}} />);
+				expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 			}).toThrow();
-			expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 		});
 	});
 
@@ -42,8 +42,8 @@ describe('OTStreams', () => {
 						<MyComponent />
 					</OTStreams>,
 				);
+				expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 			}).not.toThrow();
-			expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 		});
 
 		it('should log error and throw if session provided', () => {
@@ -54,8 +54,8 @@ describe('OTStreams', () => {
 						<MyComponent />
 					</OTStreams>,
 				);
+				expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 			}).toThrow();
-			expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 		});
 	});
 
