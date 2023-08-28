@@ -18,23 +18,26 @@ describe('OTStreams', () => {
 	});
 
 	describe('no children', () => {
-		it('should log error if no session provided', () => {
+		it('should log error if no session provided', (done) => {
 			expect(() => {
 				mount(<OTStreams />);
-				expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 			}).not.toThrow();
+
+			process.nextTick(() => {
+				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
+				done();
+			});
 		});
 
 		it('should log error and throw if session provided', () => {
 			expect(() => {
 				mount(<OTStreams session={{}} />);
-				expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
-			}).toThrow();
+			}).toThrow(jasmine.stringMatching('expected to receive a single React element child'));
 		});
 	});
 
 	describe('multiple children', () => {
-		it('should log error if no session provided', () => {
+		it('should log error if no session provided', (done) => {
 			expect(() => {
 				mount(
 					<OTStreams>
@@ -42,8 +45,12 @@ describe('OTStreams', () => {
 						<MyComponent />
 					</OTStreams>,
 				);
-				expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
 			}).not.toThrow();
+
+			process.nextTick(() => {
+				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
+				done();
+			});
 		});
 
 		it('should log error and throw if session provided', () => {
@@ -54,8 +61,7 @@ describe('OTStreams', () => {
 						<MyComponent />
 					</OTStreams>,
 				);
-				expect(console.error.calls.allArgs()[0]).toMatch(/Failed prop type/);
-			}).toThrow();
+			}).toThrow(jasmine.stringMatching('expected to receive a single React element child'));
 		});
 	});
 
