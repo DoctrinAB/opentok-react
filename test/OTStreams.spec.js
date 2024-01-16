@@ -19,30 +19,27 @@ describe('OTStreams', () => {
 
 	describe('no children', () => {
 		it('should log error if no session provided', () => {
-			expect(async () => {
-				await render(<OTStreams />);
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
+			expect(() => {
+				mount(<OTStreams />);
 			}).not.toThrow();
 		});
 
 		it('should log error and throw if session provided', () => {
 			expect(() => {
 				mount(<OTStreams session={{}} />);
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
-			}).toThrow();
+			}).toThrow(jasmine.stringMatching('expected to receive a single React element child'));
 		});
 	});
 
 	describe('multiple children', () => {
 		it('should log error if no session provided', () => {
-			expect(async () => {
-				await render(
+			expect(() => {
+				mount(
 					<OTStreams>
 						<MyComponent />
 						<MyComponent />
 					</OTStreams>,
 				);
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
 			}).not.toThrow();
 		});
 
@@ -54,8 +51,7 @@ describe('OTStreams', () => {
 						<MyComponent />
 					</OTStreams>,
 				);
-				expect(console.error).toHaveBeenCalledWith(jasmine.stringMatching('Failed prop type'));
-			}).toThrow();
+			}).toThrow(jasmine.stringMatching('expected to receive a single React element child'));
 		});
 	});
 

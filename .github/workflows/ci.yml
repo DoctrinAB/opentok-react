@@ -10,11 +10,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
       - name: Setup Node.js
-        uses: actions/setup-node@v3.1.1
+        uses: actions/setup-node@v4.0.1
         with:
           cache: 'npm'
           node-version-file: '.nvmrc'
