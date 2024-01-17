@@ -33,6 +33,7 @@ export interface OTSessionProps {
 	eventHandlers?: SessionEventHandlers;
 	onConnect?: () => void;
 	onError?: (error: Error) => void;
+	children?: React.ReactNode;
 }
 
 export interface OTStreamsProps {
