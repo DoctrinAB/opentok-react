@@ -43,7 +43,7 @@
 		"@babel/plugin-transform-react-constant-elements": "^7.23.3",
 		"@babel/plugin-transform-react-inline-elements": "^7.23.3",
 		"@babel/plugin-transform-runtime": "^7.23.7",
-		"@babel/preset-env": "^7.23.5",
+		"@babel/preset-env": "^7.24.3",
 		"@babel/preset-react": "^7.16.7",
 		"@doctrinab/prettier-config": "^1.0.0",
 		"@types/react": "^17.0.43",
