@@ -1,89 +1,89 @@
 {
-  "name": "@doctrinab/opentok-react",
-  "version": "1.1.0",
-  "description": "React components for OpenTok.js",
-  "main": "dist/index.js",
-  "scripts": {
-    "types": "tsd",
-    "test": "karma start",
-    "unit": "karma start --single-run",
-    "prepublishOnly": "npm run build",
-    "build": "NODE_ENV=production babel src --out-dir dist",
-    "lint": "eslint src test",
-    "example": "browserify -o ./example/bundle.js ./example/app.js && cd example && python -m SimpleHTTPServer"
-  },
-  "keywords": [
-    "tokbox",
-    "opentok",
-    "react",
-    "react-component",
-    "video",
-    "webrtc"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/doctrinab/opentok-react.git"
-  },
-  "license": "MIT",
-  "peerDependencies": {
-    "react": "16 || 17 || 18"
-  },
-  "dependencies": {
-    "lodash": "^4.17.21",
-    "prop-types": "^15.8.1",
-    "react-display-name": "^0.2.0",
-    "scriptjs": "^2.5.8",
-    "uuid": "^9.0.1"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.23.4",
-    "@babel/core": "^7.17.10",
-    "@babel/eslint-parser": "^7.23.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.17.3",
-    "@babel/plugin-transform-react-constant-elements": "^7.23.3",
-    "@babel/plugin-transform-react-inline-elements": "^7.23.3",
-    "@babel/plugin-transform-runtime": "^7.23.7",
-    "@babel/preset-env": "^7.24.3",
-    "@babel/preset-react": "^7.16.7",
-    "@types/react": "^17.0.43",
-    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
-    "babelify": "^10.0.0",
-    "browserify": "^17.0.0",
-    "enzyme": "^3.11.0",
-    "enzyme-adapter-react-16": "^1.15.6",
-    "eslint": "^8.15.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-import": "^2.29.0",
-    "eslint-plugin-jasmine": "^4.1.3",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.5.0",
-    "jasmine-core": "^5.1.2",
-    "karma": "^6.4.2",
-    "karma-babel-preprocessor": "^8.0.2",
-    "karma-browserify": "^8.1.0",
-    "karma-chrome-launcher": "^3.2.0",
-    "karma-jasmine": "^5.1.0",
-    "karma-spec-reporter": "^0.0.34",
-    "opentok-test-scripts": "^3.2.1",
-    "prettier": "^2.6.2",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
-    "tsd": "^0.20.0"
-  },
-  "browserify": {
-    "transform": [
-      "babelify"
-    ]
-  },
-  "types": "./types/index.d.ts",
-  "browserslist": [
-    "last 2 major versions",
-    "last 4 iOS major versions",
-    "> 5%",
-    "not dead",
-    "not IE 11"
-  ]
+	"name": "@doctrinab/opentok-react",
+	"version": "1.1.0",
+	"description": "React components for OpenTok.js",
+	"main": "dist/index.js",
+	"scripts": {
+		"types": "tsd",
+		"test": "karma start",
+		"unit": "karma start --single-run",
+		"prepublishOnly": "npm run build",
+		"build": "NODE_ENV=production babel src --out-dir dist",
+		"lint": "eslint src test",
+		"example": "browserify -o ./example/bundle.js ./example/app.js && cd example && python -m SimpleHTTPServer"
+	},
+	"keywords": [
+		"tokbox",
+		"opentok",
+		"react",
+		"react-component",
+		"video",
+		"webrtc"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/doctrinab/opentok-react.git"
+	},
+	"license": "MIT",
+	"peerDependencies": {
+		"react": "16 || 17 || 18"
+	},
+	"dependencies": {
+		"lodash": "^4.17.21",
+		"prop-types": "^15.8.1",
+		"react-display-name": "^0.2.0",
+		"scriptjs": "^2.5.8",
+		"uuid": "^9.0.1"
+	},
+	"devDependencies": {
+		"@babel/cli": "^7.23.4",
+		"@babel/core": "^7.17.10",
+		"@babel/eslint-parser": "^7.23.3",
+		"@babel/plugin-proposal-object-rest-spread": "^7.17.3",
+		"@babel/plugin-transform-react-constant-elements": "^7.23.3",
+		"@babel/plugin-transform-react-inline-elements": "^7.23.3",
+		"@babel/plugin-transform-runtime": "^7.23.7",
+		"@babel/preset-env": "^7.24.3",
+		"@babel/preset-react": "^7.16.7",
+		"@types/react": "^17.0.43",
+		"babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+		"babelify": "^10.0.0",
+		"browserify": "^17.0.0",
+		"enzyme": "^3.11.0",
+		"enzyme-adapter-react-16": "^1.15.6",
+		"eslint": "^8.15.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.29.0",
+		"eslint-plugin-jasmine": "^4.1.3",
+		"eslint-plugin-jsx-a11y": "^6.8.0",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.32.2",
+		"eslint-plugin-react-hooks": "^4.5.0",
+		"jasmine-core": "^5.1.2",
+		"karma": "^6.4.2",
+		"karma-babel-preprocessor": "^8.0.2",
+		"karma-browserify": "^8.1.0",
+		"karma-chrome-launcher": "^3.2.0",
+		"karma-jasmine": "^5.1.0",
+		"karma-spec-reporter": "^0.0.34",
+		"opentok-test-scripts": "^3.2.1",
+		"prettier": "^2.6.2",
+		"react": "^16.14.0",
+		"react-dom": "^16.14.0",
+		"tsd": "^0.20.0"
+	},
+	"browserify": {
+		"transform": [
+			"babelify"
+		]
+	},
+	"types": "./types/index.d.ts",
+	"browserslist": [
+		"last 2 major versions",
+		"last 4 iOS major versions",
+		"> 5%",
+		"not dead",
+		"not IE 11"
+	]
 }
