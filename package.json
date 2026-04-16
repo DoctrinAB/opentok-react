@@ -60,7 +60,7 @@
 		"eslint-plugin-prettier": "^5.5.5",
 		"eslint-plugin-react": "^7.34.1",
 		"eslint-plugin-react-hooks": "^4.6.2",
-		"jasmine-core": "^5.1.2",
+		"jasmine-core": "^6.2.0",
 		"karma": "^6.4.4",
 		"karma-babel-preprocessor": "^8.0.2",
 		"karma-browserify": "^8.1.0",
