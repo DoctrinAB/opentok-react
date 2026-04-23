@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { v4 as uuid } from 'uuid';
 
 export default class OTSubscriber extends Component {
 	constructor(props, context) {
@@ -61,7 +60,7 @@ export default class OTSubscriber extends Component {
 			this.node.appendChild(container);
 		}
 
-		this.subscriberId = uuid();
+		this.subscriberId = crypto.randomUUID();
 		const { subscriberId } = this;
 
 		const subscriber = this.state.session.subscribe(
