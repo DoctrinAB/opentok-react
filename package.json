@@ -33,7 +33,7 @@
 		"prop-types": "^15.8.1",
 		"react-display-name": "^0.2.0",
 		"scriptjs": "^2.5.8",
-		"uuid": "^9.0.1"
+		"uuid": "^14.0.0"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.28.6",
