@@ -1,7 +1,5 @@
 node_modules/
 dist/
-example/bundle.js
-example/config.js
 
 # Logs
 logs
@@ -176,3 +174,4 @@ Sessionx.vim
 tags
 # Persistent undo
 [._]*.un~
+.travis.yml
