@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { validate as uuidValidate, version as uuidVersion } from 'uuid';
 import { mount } from './enzyme';
 import OTPublisher from '../src/OTPublisher';
 
@@ -121,8 +121,8 @@ describe('OTPublisher', () => {
 
 			it('should have a valid publisherId', () => {
 				const { publisherId } = wrapper.instance();
-				const uuidV4Regex = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-				expect(uuidV4Regex.test(publisherId)).toBe(true);
+				expect(uuidValidate(publisherId)).toBe(true);
+				expect(uuidVersion(publisherId)).toEqual(4);
 			});
 		});
 

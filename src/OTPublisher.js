@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import once from 'lodash/once';
 import { omitBy, isNil } from 'lodash/fp';
+import { v4 as uuid } from 'uuid';
 
 export default class OTPublisher extends Component {
 	constructor(props, context) {
@@ -112,7 +113,7 @@ export default class OTPublisher extends Component {
 			this.node.appendChild(container);
 		}
 
-		this.publisherId = crypto.randomUUID();
+		this.publisherId = uuid();
 		const { publisherId } = this;
 
 		this.errorHandler = once((err) => {
