@@ -9,8 +9,7 @@
 		"unit": "karma start --single-run",
 		"prepublishOnly": "npm run build",
 		"build": "NODE_ENV=production babel src --out-dir dist",
-		"lint": "eslint src test",
-		"example": "browserify -o ./example/bundle.js ./example/app.js && cd example && python -m SimpleHTTPServer"
+		"lint": "eslint src test"
 	},
 	"keywords": [
 		"tokbox",
