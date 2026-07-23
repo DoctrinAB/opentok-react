@@ -70,7 +70,7 @@
 		"react": "^16.14.0",
 		"react-dom": "^16.14.0",
 		"tsd": "^0.33.0",
-		"webpack": "^5.108.4"
+		"webpack": "^5.109.0"
 	},
 	"types": "./types/index.d.ts",
 	"browserslist": [
